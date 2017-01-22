@@ -1,5 +1,6 @@
 syntax on
 filetype plugin indent on
+set relativenumber 
 set number
 set encoding=utf8
 set ruler
