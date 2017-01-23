@@ -17,6 +17,9 @@ set laststatus=2
 " use system clipboard
 set clipboard+=unnamed
 
+" fix backspace
+set backspace=2
+
 " no backup
 set nobackup
 set nowb
