@@ -5,6 +5,9 @@ set number
 set encoding=utf8
 set ruler
 
+" enable mouse
+set mouse=a
+
 " disable auto comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
