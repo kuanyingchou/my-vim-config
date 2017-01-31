@@ -18,6 +18,7 @@ vmap y ygv<Esc>
 set laststatus=2
 
 " use system clipboard
+set clipboard=unnamedplus
 set clipboard+=unnamed
 
 " fix backspace
