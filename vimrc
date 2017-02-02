@@ -76,7 +76,7 @@ execute pathogen#infect()
 
 " ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-map <C-i> :CtrlPBuffer<CR>
+map <C-n> :CtrlPBuffer<CR>
 let g:ctrlp_max_files=0 
 let g:ctrlp_max_depth=40 
 
