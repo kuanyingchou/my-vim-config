@@ -5,6 +5,10 @@ set number
 set encoding=utf8
 set ruler
 
+" colors
+color slate
+set background=dark
+
 " enable mouse
 set mouse=a
 
@@ -39,10 +43,6 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-
-" colors
-" colorscheme default
-set background=dark
 
 " auto indent
 set ai 
