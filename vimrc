@@ -40,6 +40,10 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 
+" colors
+" colorscheme default
+set background=dark
+
 " auto indent
 set ai 
 
