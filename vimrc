@@ -74,28 +74,19 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
-"""""""""""""""""""""""""""""""""
-" pathogen
-execute pathogen#infect()
+" plug
+call plug#begin('~/.vim/plugged')
 
-" ctrlp
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-map <C-n> :CtrlPBuffer<CR>
-let g:ctrlp_max_files=0 
-let g:ctrlp_max_depth=40 
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+map <C-p> :Files<CR>
+map <C-n> :Buffers<CR>
 
-" use silver searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" nerdtree
+Plug 'scrooloose/nerdtree'
 map <C-b> :NERDTreeToggle<CR>
+
+Plug 'tpope/vim-surround'
+Plug 'flazz/vim-colorschemes'
+Plug 'tomtom/tcomment_vim'
+
+call plug#end()
 
