@@ -87,6 +87,7 @@ map <C-b> :NERDTreeToggle<CR>
 Plug 'tpope/vim-surround'
 Plug 'flazz/vim-colorschemes'
 Plug 'tomtom/tcomment_vim'
+Plug 'lambdatoast/elm.vim'
 
 call plug#end()
 
