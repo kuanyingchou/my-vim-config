@@ -77,7 +77,8 @@ endfunction
 " plug
 call plug#begin('~/.vim/plugged')
 
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 map <C-p> :Files<CR>
 map <C-n> :Buffers<CR>
 
@@ -88,6 +89,22 @@ Plug 'tpope/vim-surround'
 Plug 'flazz/vim-colorschemes'
 Plug 'tomtom/tcomment_vim'
 Plug 'lambdatoast/elm.vim'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
+" [ easy motion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+"map <Leader> <Plug>(easymotion-overwin-f)
+
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+map <Leader> <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" ]
