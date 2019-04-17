@@ -9,6 +9,9 @@ set ruler
 color slate
 set background=dark
 
+" font
+set guifont=Inconsolata:h16
+
 " enable mouse
 set mouse=a
 
@@ -38,11 +41,11 @@ set ignorecase
 set smartcase
 
 " tabs
-set expandtab
+"set expandtab
 set smarttab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 
 " auto indent
 set ai 
@@ -51,11 +54,14 @@ set ai
 set si 
 
 " wrap lines
-set wrap 
+set nowrap 
 
 " long lines as break lines
 map j gj
 map k gk
+
+" delete to blackhole buffer before put
+vnoremap p "_dP
 
 " status line
 set laststatus=2
@@ -74,6 +80,22 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
+" project-specific rc
+set exrc
+set secure
+
+" show whitespaces
+set listchars=tab:¦·,extends:…,precedes:‹,nbsp:·,trail:·
+set list
+
+" space between lines
+set linespace=3
+
+let &colorcolumn=join(range(81,999),",")
+" highlight ColorColumn ctermbg=246 guibg=#333333
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " plug
 call plug#begin('~/.vim/plugged')
 
@@ -81,6 +103,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 map <C-p> :Files<CR>
 map <C-n> :Buffers<CR>
+map <C-s> :BLines<CR>
+map <S-C-s> :Ag<CR>
 
 Plug 'scrooloose/nerdtree'
 map <C-b> :NERDTreeToggle<CR>
@@ -89,12 +113,15 @@ Plug 'tpope/vim-surround'
 Plug 'flazz/vim-colorschemes'
 Plug 'tomtom/tcomment_vim'
 Plug 'lambdatoast/elm.vim'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
+Plug 'udalov/kotlin-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'zivyangll/git-blame.vim' 
 
 call plug#end()
 
 " [ easy motion
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
+"let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
@@ -102,9 +129,16 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-map <Leader> <Plug>(easymotion-overwin-f2)
+"map <Leader> <Plug>(easymotion-overwin-f2)
 
 " Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
+"let g:EasyMotion_smartcase = 1
+" ] 
 
+" [ git blame
+nnoremap <Leader>b :<C-u>call gitblame#echo()<CR> 
 " ]
+
+" colorscheme
+colorscheme badwolf
+
